@@ -69,7 +69,9 @@ DiamondPricePrediction/
 
 ### Step 1: Clone the repository
 ```bash
-git clone https://github.com/your-username/diamond-price-prediction.git
+git clone https://github.com/anjha1/DiamondPricePrediction.git
+```
+```bash
 cd diamond-price-prediction
 ````
 
