@@ -7,7 +7,6 @@ This is an end-to-end Machine Learning project that predicts the price of a diam
 
 ## 📁 Project Structure
 
-```
 
 DiamondPricePrediction/
 │
@@ -50,7 +49,7 @@ DiamondPricePrediction/
 ├── README.md                   # Project readme
 └── setup.py                    # Setup for packaging (optional)
 
-````
+
 
 ---
 
@@ -137,4 +136,3 @@ Feel free to fork and customize.
 
 Made with ❤️ by Achhuta Nand Jha
 
-```
