@@ -1,5 +1,58 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# VS Code and IDE config
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+
+# Python packaging
+*.egg-info/
+build/
+dist/
+
+# Cache and test folders
+.cache/
+.pytest_cache/
+__pypackages__/
+
+# Flask specific
+instance/
+*.db
+*.sqlite3
+
+# HTML/JS Build artifacts (optional)
+staticfiles/
+*.min.js
+*.map
+
+# Personal backup files
+*.bak
+*.swp
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
 *.py[codz]
 *$py.class
 
