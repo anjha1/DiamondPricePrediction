@@ -1,0 +1,9 @@
+version: '3.0'
+
+services:
+  diamond-app:
+    build: .
+    container_name: diamond_price_app
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
