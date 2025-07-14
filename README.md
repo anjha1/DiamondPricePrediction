@@ -19,13 +19,14 @@ This is an end-to-end Machine Learning project that predicts the price of a diam
 ## 🔧 Setup Instructions
 
 ### Step 1: Clone the repository
+---
 
 ```bash
 
 git clone https://github.com/anjha1/DiamondPricePrediction.git
 
 ```
----
+
 
 ```bash
 cd diamond-price-prediction
