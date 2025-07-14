@@ -14,17 +14,18 @@ This is an end-to-end Machine Learning project that predicts the price of a diam
 - 🌐 Flask-based Web UI for Prediction
 - 🎨 Stylish, Responsive Frontend using HTML & CSS
 
----
+
 
 ## 🔧 Setup Instructions
 
+
+
+-----------------------------------------------------------------------------------------------
+
 ### Step 1: Clone the repository
----
 
 ```bash
-
 git clone https://github.com/anjha1/DiamondPricePrediction.git
-
 ```
 
 
