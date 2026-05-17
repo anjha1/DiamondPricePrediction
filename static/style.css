@@ -1,77 +1,314 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background: linear-gradient(to right, #667eea, #764ba2);
-    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 0;
-    color: #fff;
+    padding: 20px;
+    color: #333;
+    min-height: 100vh;
 }
 
 .container {
-    max-width: 500px;
-    margin: 50px auto;
-    background-color: #1f1f2e;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 35px;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 28px;
-    color: #ffc107;
+    font-size: 32px;
+    margin: 0 0 10px 0;
+    color: #764ba2;
+    font-weight: 700;
 }
 
-.input-group {
-    margin-bottom: 20px;
+.subtitle {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
+
+.section-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #764ba2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 25px 0 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
 }
 
 label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: #333;
 }
 
 input, select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
     font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
 }
 
-button {
+input:focus, select:focus {
+    outline: none;
+    border-color: #764ba2;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+}
+
+input::placeholder {
+    color: #999;
+}
+
+small {
+    font-size: 11px;
+    color: #999;
+    margin-top: 4px;
+}
+
+.btn-primary {
     width: 100%;
-    padding: 12px;
-    background-color: #ffc107;
-    color: #1f1f1f;
-    font-weight: bold;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 700;
     font-size: 16px;
     border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background-color: #ff9800;
-}
-
-.result {
-    margin-top: 20px;
-    text-align: center;
-    background-color: #282c34;
-    padding: 15px;
     border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 10px 25px rgba(118, 75, 162, 0.3);
 }
-.footer {
-    color: rgb(255, 252, 252);
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(118, 75, 162, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 25px;
+    padding: 50px 40px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+    position: relative;
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 36px;
+    color: #ccc;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #764ba2;
+}
+
+.modal-header {
     text-align: center;
-    padding: 10px;
+    margin-bottom: 35px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #764ba2;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.price-display {
+    text-align: center;
+    padding: 40px 35px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    margin-bottom: 35px;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.price-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.price-amount {
+    color: #ffffff;
+    font-size: 56px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    line-height: 1;
+}
+
+.price-info {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+    margin: 0;
+    font-style: italic;
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    color: #764ba2;
+    font-weight: 600;
+    font-size: 14px;
+    border: 2px solid #764ba2;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-secondary:hover {
+    background-color: #764ba2;
+    color: white;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    color: #999;
+    font-size: 12px;
+}
+
+.footer p {
+    margin: 8px 0;
 }
 
 .footer a {
-    color: red;
+    color: #764ba2;
     text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #667eea;
+    text-decoration: underline;
+}
+
+.version {
+    font-size: 11px;
+    color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+        margin: 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        padding: 40px 25px;
+    }
+
+    .price-amount {
+        font-size: 44px;
+    }
+
+    .price-display {
+        padding: 35px 25px;
+    }
+
+    .modal-header h2 {
+        font-size: 26px;
+    }
 }

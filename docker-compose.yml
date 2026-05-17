@@ -1,9 +1,17 @@
-version: '3.0'
+version: '3.8'
 
 services:
   diamond-app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: diamond_price_app
     ports:
       - "5000:5000"
+    environment:
+      - FLASK_ENV=production
     restart: unless-stopped
+    volumes:
+      - ./artifacts:/app/artifacts:ro
+      - ./templates:/app/templates:ro
+      - ./static:/app/static:ro

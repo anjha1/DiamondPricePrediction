@@ -1,17 +1,93 @@
+# ==================== Git ====================
+.git
+.gitignore
+.gitattributes
+.github
+
+# ==================== Python ====================
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-venv/
-.env
-*.db
-*.log
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
 build/
 dist/
-*.ipynb
+.eggs/
+
+# ==================== Virtual Environments ====================
+venv/
+venv_new/
+env/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# ==================== IDE & Editor ====================
+.vscode
+.idea
+.project
+.pydevproject
+.settings
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+.cursorignore
+
+# ==================== Testing & Coverage ====================
+.pytest_cache/
+.tox/
+.nox/
+htmlcov/
+.coverage
+.coverage.*
+.hypothesis/
+
+# ==================== Environment & Secrets ====================
+.env
+.env.local
+.envrc
+
+# ==================== Documentation ====================
+docs/
+*.md
+!README.md
+/site
+
+# ==================== Notebooks ====================
+.ipynb_checkpoints/
 notebooks/
-artifacts/
-.git/
-.gitignore
+
+# ==================== Logs ====================
+logs/
+*.log
+pip-log.txt
+
+# ==================== OS Files ====================
+.DS_Store
+Thumbs.db
+.DS_Store?
+._*
+
+# ==================== CI/CD ====================
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# ==================== Development ====================
+.cache/
+*.bak
+*.tmp
+local_settings.py
+
+# ==================== Docker Build ====================
 Dockerfile
-README.md
+docker-compose.yml
+.dockerignore
+
+# ==================== Other ====================
+.mypy_cache/
+.ruff_cache/
+.pytype/
